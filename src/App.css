@@ -1,38 +1,29 @@
-.App {
-  text-align: center;
+/* Reset default spacing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Root level styles for full background */
+html, body, #root {
+  height: 100%;
+  font-family: 'Segoe UI', 'Outfit', sans-serif;
+  background: linear-gradient(to bottom right, #1e0033, #3A004F); 
+  color: #ffffff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.white-checkbox-group .ant-checkbox-wrapper {
+  color: white !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.white-checkbox-group .ant-checkbox-inner {
+  background-color: transparent;
+  border-color: #bb6ae0;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.white-checkbox-group .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #bb6ae0;
+  border-color: #bb6ae0;
 }
