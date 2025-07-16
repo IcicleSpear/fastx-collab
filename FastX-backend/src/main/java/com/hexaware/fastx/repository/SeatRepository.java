@@ -17,6 +17,9 @@ public interface SeatRepository extends JpaRepository<Seat, Integer> {
 	@Query("SELECT s FROM Seat s WHERE s.bus.busName = :busName AND s.status = 'AVAILABLE'")
 	List<Seat> findAvailableSeatsByBusName(@Param("busName") String busName);
 
+<<<<<<< HEAD
 	List<Seat> findByBus_BusId(int busId); 
 
+=======
+>>>>>>> branch 'Abhishek' of https://github.com/IcicleSpear/fastx-collab.git
 }

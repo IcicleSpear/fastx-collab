@@ -25,6 +25,7 @@ public class CancellationServiceImplementation implements CancellationService {
 
     @Override
     public CancellationDTO cancelBooking(int bookingId, String reason) {
+<<<<<<< HEAD
 
         Booking booking = bookingRepo.findById(bookingId)
                 .orElseThrow(() -> new BookingNotFoundException("Booking not found with ID: " + bookingId));
@@ -45,6 +46,25 @@ public class CancellationServiceImplementation implements CancellationService {
         cancellation.setBooking(booking);
         cancellation.setCancellationDate(LocalDateTime.now());
         cancellation.setRefundAmount(booking.getTotalAmount() * 0.9); // 90% refund
+=======
+        
+        Booking booking = bookingRepo.findById(bookingId)
+                .orElseThrow(() -> new BookingNotFoundException("Booking not found with ID: " + bookingId));
+
+        if (booking.getStatus().equalsIgnoreCase("CANCELLED")) {
+            throw new IllegalStateException("Booking is already cancelled.");
+        }
+
+        double refundAmount = booking.getTotalAmount() * 0.9;
+
+        Cancellation cancellation = new Cancellation();
+        cancellation.setBooking(booking);
+        cancellation.setCancellationDate(LocalDateTime.now());
+        cancellation.setRefundAmount(refundAmount);
+
+        booking.setStatus("CANCELLED");
+        bookingRepo.save(booking);
+>>>>>>> branch 'Abhishek' of https://github.com/IcicleSpear/fastx-collab.git
         cancellationRepo.save(cancellation);
 
         return mapToDTO(cancellation, reason);

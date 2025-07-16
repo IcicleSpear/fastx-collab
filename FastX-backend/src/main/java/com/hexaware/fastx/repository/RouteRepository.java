@@ -3,6 +3,7 @@ package com.hexaware.fastx.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+<<<<<<< HEAD
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -18,6 +19,16 @@ public interface RouteRepository extends JpaRepository<Route,Integer> {
             "UNION SELECT DISTINCT destination FROM route WHERE LOWER(destination) LIKE :q", 
     nativeQuery = true)
 	List<String> findDistinctOriginsOrDestinations(@Param("q") String q);
+=======
+import org.springframework.stereotype.Repository;
+
+import com.hexaware.fastx.entity.Route;
+
+@Repository
+public interface RouteRepository extends JpaRepository<Route,Integer> {
+
+	List<Route> findByOriginAndDestination(String origin, String destination);
+>>>>>>> branch 'Abhishek' of https://github.com/IcicleSpear/fastx-collab.git
 
 	
 

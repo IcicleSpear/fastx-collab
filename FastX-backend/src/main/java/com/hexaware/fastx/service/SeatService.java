@@ -21,7 +21,11 @@ public interface SeatService {
 	    List<SeatDTO> getAvailableSeatsByBusId(int busId, String status);
 	    
 	    List<SeatDTO> getAvailableSeatsByBusName(String busName);
+<<<<<<< HEAD
 	    
 	    List<SeatDTO> getSeatsByBusId(int busId);
+=======
+
+>>>>>>> branch 'Abhishek' of https://github.com/IcicleSpear/fastx-collab.git
 
 }

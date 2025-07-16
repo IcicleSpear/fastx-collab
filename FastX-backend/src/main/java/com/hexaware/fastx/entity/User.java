@@ -33,7 +33,11 @@ public class User {
 	private String email;
 	
 	@NotBlank(message = "Password is required")
+<<<<<<< HEAD
 	@Size(min=5, max=100, message = "Password length invalid")
+=======
+	@Size(min=5,max=20,message = "make a Strong password")
+>>>>>>> branch 'Abhishek' of https://github.com/IcicleSpear/fastx-collab.git
 	private String password;
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)

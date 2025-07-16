@@ -17,6 +17,9 @@ public interface RouteService {
 	RouteDTO getRouteById(int id);
 
 	List<RouteDTO> searchRoutesByOriginAndDestination(String origin, String destination);
+<<<<<<< HEAD
 	
+=======
+>>>>>>> branch 'Abhishek' of https://github.com/IcicleSpear/fastx-collab.git
 
 }

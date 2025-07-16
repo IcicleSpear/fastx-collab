@@ -1,5 +1,6 @@
 package com.hexaware.fastx.dto;
 
+<<<<<<< HEAD
 import jakarta.validation.constraints.Size;
 
 public class UserDTO {
@@ -9,6 +10,14 @@ public class UserDTO {
 	private String contactNumber;
 	private String email;
 	@Size(min=5, max=20, message = "Password must be between 5 and 20 characters")
+=======
+public class UserDTO {
+	private int userId;
+	private String name;
+	private String gender;
+	private String contactNumber;
+	private String email;
+>>>>>>> branch 'Abhishek' of https://github.com/IcicleSpear/fastx-collab.git
 	private String password;
 	private String role;
 	

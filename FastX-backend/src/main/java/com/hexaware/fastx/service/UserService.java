@@ -19,8 +19,11 @@ public interface UserService {
 	List<UserDTO> getAllUsers();
 
 	List<UserDTO> getUsersByRole(String role);
+<<<<<<< HEAD
 	
 	String resetPassword(String email, String newPassword);
 
 	UserDTO updateUserProfile(int userId, UserDTO userDTO);
+=======
+>>>>>>> branch 'Abhishek' of https://github.com/IcicleSpear/fastx-collab.git
 }

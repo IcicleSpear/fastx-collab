@@ -28,6 +28,9 @@ public interface BusService {
 
     List<BusDTO> filterByFare(double minFare, double maxFare);
 
+<<<<<<< HEAD
     List<BusDTO> searchBuses(String origin, String destination, Double minFare, Double maxFare, List<String> amenities, String type);
 
+=======
+>>>>>>> branch 'Abhishek' of https://github.com/IcicleSpear/fastx-collab.git
 }

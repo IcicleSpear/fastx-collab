@@ -114,6 +114,7 @@ public class SeatServiceImplementation implements SeatService {
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }
+<<<<<<< HEAD
     
     @Override
     public List<SeatDTO> getSeatsByBusId(int busId) {
@@ -125,6 +126,12 @@ public class SeatServiceImplementation implements SeatService {
     
 
     private SeatDTO convertToDTO(Seat seat){
+=======
+
+    
+
+    private SeatDTO convertToDTO(Seat seat) {
+>>>>>>> branch 'Abhishek' of https://github.com/IcicleSpear/fastx-collab.git
         SeatDTO dto = new SeatDTO();
         dto.setSeatId(seat.getSeatId());
         dto.setSeatNumber(seat.getSeatNumber());

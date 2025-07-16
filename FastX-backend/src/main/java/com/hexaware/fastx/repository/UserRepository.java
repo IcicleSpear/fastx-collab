@@ -16,9 +16,12 @@ public interface UserRepository extends JpaRepository<User,Integer> {
 
 	List<User> findByRole(String role);
 
+<<<<<<< HEAD
 	User findByEmail(String email);
 	
 
 
+=======
+>>>>>>> branch 'Abhishek' of https://github.com/IcicleSpear/fastx-collab.git
 }
 	
