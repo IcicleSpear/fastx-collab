@@ -52,7 +52,7 @@ const BusCard = ({ bus, origin, destination, onBook }) => {
       }}
     >
       <img
-        src={bus.imageUrl || '/default-bus.png'}
+        src={bus.imageUrl || '/bus-img.jpg'}
         alt={bus.name || 'Unnamed Bus'}
         style={{
           width: 140,

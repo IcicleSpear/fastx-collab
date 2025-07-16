@@ -19,15 +19,22 @@ const Login = () => {
     setError('');
     try {
       const res = await axios.post('http://localhost:9000/api/auth/login', formData);
-      const token = res.data.replace('Bearer ', '');
+      const token = res.data.token.replace('Bearer ', ''); 
       localStorage.setItem('token', token);
+
+      localStorage.setItem('user', JSON.stringify({
+      userId: res.data.userId,
+      email: res.data.email,
+      role: res.data.role
+    }));
+
       const decoded = jwtDecode(token);
-      const role = decoded.role;
+      const role = decoded.role || res.data.role;
 
       // Redirect based on role
       if (role === 'USER') navigate('/user/dashboard');
-      else if (role === 'BUS_OPERATOR') navigate('/operator/manage-bus');
-      else if (role === 'ADMIN') navigate('/admin/manage-users');
+      else if (role === 'BUS_OPERATOR') navigate('/operator/dashboard');
+      else if (role === 'ADMIN') navigate('/admin/dashboard');
     } catch (err) {
       setError(err.response?.data || 'Login failed');
     } finally {

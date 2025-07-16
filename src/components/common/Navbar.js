@@ -7,7 +7,7 @@ import './Navbar.css';
 const Navbar = () => {
     const [role, setRole] = useState(null);
     const navigate = useNavigate();
-    const location = useLocation(); // Track route changes
+    const location = useLocation();
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -17,12 +17,12 @@ const Navbar = () => {
                 setRole(decoded.role);
             } catch (err) {
                 console.log("Invalid token");
-                setRole(null); // In case token is invalid
+                setRole(null); 
             }
         } else {
-            setRole(null); // No token means logout
+            setRole(null); 
         }
-    }, [location]); // Run this effect on route change
+    }, [location]); 
 
     const logout = () => {
         localStorage.removeItem("token");
@@ -52,25 +52,20 @@ const Navbar = () => {
                     {role === "USER" && (
                         <>
                             <Menu.Item name="Dashboard" className="navbar-item" onClick={() => navigate("/user/dashboard")} />
-                            <Menu.Item name="Book Seats" className="navbar-item" onClick={() => navigate("/user/book")} />
                             <Menu.Item name="My Bookings" className="navbar-item" onClick={() => navigate("/user/history")} />
-                            <Menu.Item name="Payment" className="navbar-item" onClick={() => navigate("/user/payment")} />
+                            <Menu.Item name="Profile" className="navbar-item" onClick={() => navigate("/user/profile")} />
                         </>
                     )}
 
                     {role === "BUS_OPERATOR" && (
                         <>
-                            <Menu.Item name="Manage Buses" className="navbar-item" onClick={() => navigate("/operator/manage-bus")} />
-                            <Menu.Item name="Manage Routes" className="navbar-item" onClick={() => navigate("/operator/manage-route")} />
-                            <Menu.Item name="View Bookings" className="navbar-item" onClick={() => navigate("/operator/bookings")} />
+                           <Menu.Item name="Dashboard" className="navbar-item" onClick={() => navigate("/operator/dashboard")}/>
                         </>
                     )}
 
                     {role === "ADMIN" && (
                         <>
-                            <Menu.Item name="Manage Users" className="navbar-item" onClick={() => navigate("/admin/manage-users")} />
-                            <Menu.Item name="Manage Buses" className="navbar-item" onClick={() => navigate("/admin/manage-buses")} />
-                            <Menu.Item name="Manage Routes" className="navbar-item" onClick={() => navigate("/admin/manage-routes")} />
+                            <Menu.Item name="Dashboard" className="navbar-item" onClick={() => navigate("/admin/dashboard")} />
                         </>
                     )}
 
